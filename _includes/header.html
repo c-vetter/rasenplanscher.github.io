@@ -1,0 +1,9 @@
+<header>
+<h2 id="logo"><a href="/">rasenplanscher</a></h2>
+<nav id="site-nav">
+<ul>
+	<li{% if page.url == '/index.html' %} class="current"{% endif %}><a href="/">Home</a></li>
+	<li{% if page.in_blog %} class="current"{% endif %}><a href="/blog.html">Blog</a></li>
+</ul>
+</nav>
+</header>

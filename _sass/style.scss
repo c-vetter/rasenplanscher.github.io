@@ -1,0 +1,168 @@
+@import "base";
+
+body {
+	color: $color_text;
+	font-family: $font_default;
+	margin: 3% auto 15%;
+	max-width: 35em;
+}
+
+@media (max-width: 40em) {
+	body {
+		margin: 3% 5% 15%;
+	}
+}
+
+@media (min-width: 30em) {
+	header {
+		margin: 0 0 1em;
+	}
+}
+
+@media (min-width: 40em) {
+	header {
+		margin: 0 0 2em;
+	}
+}
+
+@media (min-width: 50em) {
+	header {
+		margin: 0 0 2.5em;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font_heading;
+	font-weight: 400;
+}
+
+:link,
+:visited {
+	border: $link_border_width solid transparent;
+	border-radius: $link_border_radius;
+	color: $color_link;
+	text-decoration: none;
+	margin: $link_margin;
+	padding: $link_padding;
+
+	&:hover {
+		border-color: $color_link;
+	}
+}
+
+code {
+	border: $code_border_width solid $code_border_color;
+	border-radius: $code_border_radius;
+	font-family: $font_code;
+	padding: 0 .4em .15em;
+}
+
+header {
+	@include clearfix;
+}
+
+#logo {
+	float: left;
+	margin: .15em 0;
+
+	:link,
+	:visited {
+		border: none;
+		color: $color_logo;
+		font-weight: 800;
+		text-decoration: none;
+	}
+}
+
+nav {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		float: left;
+		padding: .5em (-$link_margin_horizontal);
+	}
+
+	:link {
+		display: block;
+	}
+
+	:link,
+	:visited {
+		color: #fff;
+		background: #ccc;
+		padding: 0 .5em $link_padding_bottom;
+
+		&:hover {
+			background: $color_link;
+		}
+	}
+
+	.current {
+		:link,
+		:visited {
+			background: tint($color_link, 67%);
+		}
+	}
+}
+
+#site-nav {
+	float: right;
+
+	li {
+		margin-left: 1em;
+	}
+}
+
+.pagination {
+	@include clearfix;
+
+	margin: 2em 0 0;
+
+	.next {
+		float: right;
+	}
+}
+
+.posts-list {
+	list-style: none;
+	padding: 0;
+
+	li {
+		padding: 0 0 1em;
+	}
+
+	h2 {
+		position: relative;
+
+		// should prevent .date from colliding with the title
+		&:after {
+			content: "";
+			display: inline-block;
+			// basically eye-balled the width of .date
+			width: 2.6em;
+		}
+	}
+
+	.date {
+		// visual alignment of baselines, needs to change depending on font-size
+		bottom: .25em;
+		color: tint($color_text, 50%);
+		font-size: .5em;
+		position: absolute;
+		right: 0;
+	}
+
+	.read-more {
+		padding: 0 (-$link_margin_horizontal);
+		text-align: right;
+	}
+}

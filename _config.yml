@@ -1,0 +1,19 @@
+encoding: utf-8
+timezone: UTC
+safe: true
+kramdown:
+  input: GFM
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+      in_blog: true

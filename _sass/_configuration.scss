@@ -1,0 +1,20 @@
+$font_default: "Noto Sans", sans-serif;
+$font_heading: "Maven Pro", sans-serif;
+$font_code: "Anonymous Pro", monospace;
+
+$color_text: #000;
+$color_background: #fff;
+$color_link: #274;
+$color_logo: tint($color_link, 60%);
+
+$link_border_width: .1em;
+$link_border_radius: .3em;
+$link_padding_horizontal: .15em;
+$link_padding_bottom: .1em;
+$link_padding: 0 $link_padding_horizontal $link_padding_bottom;
+$link_margin_horizontal: -( $link_padding_horizontal + $link_border_width );
+$link_margin: 0 $link_margin_horizontal;
+
+$code_border_color: tint($color_text, 67%);
+$code_border_width: .1em;
+$code_border_radius: .2em;

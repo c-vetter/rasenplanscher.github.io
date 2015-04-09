@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ page.title }}</title>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/gif" href="/assets/favicon.gif">
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+	<!--[if (lt IE 9)]>
+		<script src="/assets/html5shiv.min.js"></script>
+		<noscript><link rel="stylesheet" type="text/css" href="/assets/ie-noscript.css"></noscript>
+	<![endif]-->
+</head>
+<body>
+{% include header.html %}
+<h1>{{ page.title }}</h1>
+{{ content }}
+{% include footer.html %}
+</body>
+</html>
