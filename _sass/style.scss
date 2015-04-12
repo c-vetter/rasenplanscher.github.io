@@ -1,8 +1,8 @@
 @import "base";
 
 body {
-	color: $color_text;
-	font-family: $font_default;
+	color: tint($black, 20%);
+	font-family: $font-default;
 	margin: 3% auto 15%;
 	max-width: 35em;
 }
@@ -37,28 +37,28 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font_heading;
+	font-family: $font-heading;
 	font-weight: 400;
 }
 
 :link,
 :visited {
-	border: $link_border_width solid transparent;
-	border-radius: $link_border_radius;
-	color: $color_link;
+	border: $link-border-width solid transparent;
+	border-radius: $link-border-radius;
+	color: $theme-color;
 	text-decoration: none;
-	margin: $link_margin;
-	padding: $link_padding;
+	margin: $link-margin;
+	padding: $link-padding;
 
 	&:hover {
-		border-color: $color_link;
+		border-color: $theme-color;
 	}
 }
 
 code {
-	border: $code_border_width solid $code_border_color;
-	border-radius: $code_border_radius;
-	font-family: $font_code;
+	border: $code-border-width solid $code-border-color;
+	border-radius: $code-border-radius;
+	font-family: $font-code;
 	padding: 0 .4em .15em;
 }
 
@@ -73,7 +73,7 @@ header {
 	:link,
 	:visited {
 		border: none;
-		color: $color_logo;
+		color: $logo-color;
 		font-weight: 800;
 		text-decoration: none;
 	}
@@ -88,7 +88,7 @@ nav {
 
 	li {
 		float: left;
-		padding: .5em (-$link_margin_horizontal);
+		padding: .5em (-$link-margin-horizontal);
 	}
 
 	:link {
@@ -97,19 +97,19 @@ nav {
 
 	:link,
 	:visited {
-		color: #fff;
-		background: #ccc;
-		padding: 0 .5em $link_padding_bottom;
+		color: tint($black, 100%);
+		background: tint($black, 80%);
+		padding: 0 .5em $link-padding-bottom;
 
 		&:hover {
-			background: $color_link;
+			background: $theme-color;
 		}
 	}
 
 	.current {
 		:link,
 		:visited {
-			background: tint($color_link, 67%);
+			background: tint($theme-color, 67%);
 		}
 	}
 }
@@ -132,7 +132,7 @@ nav {
 	}
 }
 
-.posts-list {
+.pages-list {
 	list-style: none;
 	padding: 0;
 
@@ -155,14 +155,75 @@ nav {
 	.date {
 		// visual alignment of baselines, needs to change depending on font-size
 		bottom: .25em;
-		color: tint($color_text, 50%);
+		color: tint($theme-color, 50%);
 		font-size: .5em;
 		position: absolute;
 		right: 0;
 	}
 
 	.read-more {
-		padding: 0 (-$link_margin_horizontal);
+		padding: 0 (-$link-margin-horizontal);
 		text-align: right;
+	}
+}
+
+.project-data {
+	@media (min-width: 35em) {
+		border: .1em solid tint($black, 80%);
+		border-radius: .75em;
+		float: right;
+		margin: 0 0 1em 1em;
+		padding: 0 1em;
+		width: 15em;
+
+		.skip-link {
+			display: none;
+		}
+	}
+
+	h2 {
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+}
+
+.link-list,
+.tech-list {
+	list-style: none;
+	padding: 0;
+}
+
+.tech-list {
+	@include clearfix;
+
+	$spacing: 1em;
+
+	margin: (-$spacing / 2) (-$spacing / 2) (1em - ($spacing / 2));
+
+	li {
+		border: .1em solid tint($black, 80%);
+		border-radius: .25em;
+		float: left;
+		margin: ($spacing / 2);
+		padding: .1em .5em .2em;
+		white-space: nowrap;
+	}
+}
+
+.source-link {
+	:link {
+		&:after {
+			content: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGJhc2VQcm9maWxlPSJ0aW55IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3BhY2U9InByZXNlcnZlIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGZpbGw9IiMzMzMiIGQ9Ik03Ljk5OSwwLjQzMWMtNC4yODUsMC03Ljc2LDMuNDc0LTcuNzYsNy43NjEgYzAsMy40MjgsMi4yMjMsNi4zMzcsNS4zMDcsNy4zNjNjMC4zODgsMC4wNzEsMC41My0wLjE2OCwwLjUzLTAuMzc0YzAtMC4xODQtMC4wMDctMC42NzItMC4wMS0xLjMyIGMtMi4xNTksMC40NjktMi42MTQtMS4wNC0yLjYxNC0xLjA0Yy0wLjM1My0wLjg5Ni0wLjg2Mi0xLjEzNS0wLjg2Mi0xLjEzNWMtMC43MDUtMC40ODEsMC4wNTMtMC40NzIsMC4wNTMtMC40NzIgYzAuNzc5LDAuMDU1LDEuMTg5LDAuOCwxLjE4OSwwLjhjMC42OTIsMS4xODYsMS44MTYsMC44NDMsMi4yNTgsMC42NDVjMC4wNzEtMC41MDIsMC4yNzEtMC44NDMsMC40OTMtMS4wMzcgQzQuODYsMTEuNDI1LDMuMDQ5LDEwLjc2LDMuMDQ5LDcuNzg2YzAtMC44NDcsMC4zMDItMS41NCwwLjc5OS0yLjA4MkMzLjc2OCw1LjUwNywzLjUwMSw0LjcxOCwzLjkyNCwzLjY1IGMwLDAsMC42NTItMC4yMDksMi4xMzQsMC43OTZDNi42NzcsNC4yNzMsNy4zNCw0LjE4Nyw4LDQuMTg0YzAuNjU5LDAuMDAzLDEuMzIzLDAuMDg5LDEuOTQzLDAuMjYxIGMxLjQ4Mi0xLjAwNCwyLjEzMi0wLjc5NiwyLjEzMi0wLjc5NmMwLjQyMywxLjA2OCwwLjE1NywxLjg1NywwLjA3NywyLjA1NGMwLjQ5NywwLjU0MiwwLjc5OCwxLjIzNSwwLjc5OCwyLjA4MiBjMCwyLjk4MS0xLjgxNCwzLjYzNy0zLjU0MywzLjgyOWMwLjI3OSwwLjI0LDAuNTI3LDAuNzEzLDAuNTI3LDEuNDM3YzAsMS4wMzctMC4wMSwxLjg3NC0wLjAxLDIuMTI5IGMwLDAuMjA4LDAuMTQsMC40NDksMC41MzQsMC4zNzNjMy4wODEtMS4wMjgsNS4zMDItMy45MzUsNS4zMDItNy4zNjJDMTUuNzYsMy45MDYsMTIuMjg1LDAuNDMxLDcuOTk5LDAuNDMxeiIvPjwvc3ZnPg==);
+			display: inline-block;
+			height: 1.3em;
+			margin-left: .25em;
+			opacity: .5;
+			vertical-align: text-top;
+			width: 1.3em;
+		}
+
+		&:hover:after {
+			opacity: .8;
+		}
 	}
 }

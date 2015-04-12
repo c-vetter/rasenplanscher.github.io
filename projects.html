@@ -1,0 +1,23 @@
+---
+title: Projects
+in_projects: true
+---
+
+<ol class="pages-list">
+{% for project in site.projects %}
+<li>
+  <h2>
+    <a href="{{ project.url }}">{{ project.title }}</a>
+    <span class="date">{{ project.date | date: "%F" }}</span>
+  </h2>
+  {% include tech-list.html tech=project.tech %}
+  <div class="read-more"><a href="{{ project.url }}">view the project overview</a></div>
+  {% if project.docs_url %}
+  <div class="read-more"><a href="{{ project.docs_url }}">view the documentation</a></div>
+  {% endif %}
+  {% if project.demo_pages %}
+  <div class="read-more"><a href="{{ project.demo_pages[0].url }}">view a demo page</a></div>
+  {% endif %}
+</li>
+{% endfor %}
+</ol>

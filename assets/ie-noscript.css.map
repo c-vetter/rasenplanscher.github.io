@@ -1,8 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,KAAM,CACL,KAAK,CAAE,IAAI",
-"sources": ["c:/Users/rasenplanscher/Code/rasenplanscher.github.io/_sass/./ie-noscript.scss"],
-"sourcesContent": ["#logo {\n\tfloat: none;\n}\n"],
-"names": [],
-"file": "ie-noscript.css"
-}

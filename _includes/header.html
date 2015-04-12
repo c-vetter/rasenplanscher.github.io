@@ -3,6 +3,7 @@
 <nav id="site-nav">
 <ul>
 	<li{% if page.url == '/index.html' %} class="current"{% endif %}><a href="/">Home</a></li>
+	<li{% if page.in_projects %} class="current"{% endif %}><a href="/projects.html">Projects</a></li>
 	<li{% if page.in_blog %} class="current"{% endif %}><a href="/blog.html">Blog</a></li>
 </ul>
 </nav>
