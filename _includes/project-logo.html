@@ -1,0 +1,4 @@
+<span class="logo">
+	{% if include.project %}{% assign project = include.project %}{% endif %}
+	<img src="/assets/project-icons/{{ project.relative_path | remove: '_projects/' | remove: '.md' }}.svg">
+</span>

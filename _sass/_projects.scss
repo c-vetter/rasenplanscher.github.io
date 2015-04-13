@@ -1,0 +1,135 @@
+.project-data {
+	@media (min-width: 35em) {
+		border-radius: .75em;
+
+		border: .1em solid tint($black, 80%);
+		float: right;
+		margin: 0 0 1em 1em;
+		padding: 1em 1em 0;
+		width: 15em;
+
+		.skip-link {
+			display: none;
+		}
+	}
+
+	h2 {
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+
+	.logo {
+		display: block;
+		line-height: 0;
+		text-align: center;
+
+		img {
+			@include square(8em);
+		}
+	}
+}
+
+
+.projects-list {
+	list-style: none;
+	padding: 0;
+
+	.logo {
+		display: none;
+	}
+
+	@media screen {
+		@media (min-width: 16em) {
+			text-align: justify;
+
+			@media (max-width: 19em) {
+				text-align: center;
+			}
+
+			$item-border-width: .35em;
+
+			li {
+				display: inline-block;
+				margin: 0 0 1em;
+			}
+
+			// justify the last line as well
+			&:after {
+				content: "";
+				display: inline-block;
+				height: 0;
+				width: 100%;
+			}
+
+			a {
+				@include box-sizing(border-box);
+
+				border-color: tint($black, 75%);
+				border-radius: 50%;
+				border-width: $item-border-width;
+				display: table;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				position: relative;
+				width: 100%;
+			}
+
+			.logo {
+				display: block;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+
+			img {
+				height: 80%;
+				margin: 10%;
+				width: 80%;
+			}
+
+			.title {
+				display: none;
+			}
+
+			li:hover {
+				.logo {
+					display: none;
+				}
+
+				.title {
+					border-radius: 50%;
+					display: table-cell;
+					overflow: hidden;
+					padding: $item-border-width;
+					position: relative;
+					text-align: center;
+					vertical-align: middle;
+				}
+			}
+		}
+
+
+		// set item size according to available space
+		// so as to avoid too much space in between items
+		li {
+			@mixin size($size, $from, $to: false) {
+				@include viewport-width($from, $to) {
+					@include square($size);
+				}
+			}
+
+			@include size(10em, 16em, 19em);
+			@include size(8em, 19em, 21.5em);
+			@include size(9em, 21.5em, 24em);
+			@include size(10em, 24em, 26em);
+			@include size(11em, 26em, 28em);
+			@include size(8em, 28em, 31em);
+			@include size(9em, 31em, 34.5em);
+			@include size(10em, 34.5em, 37em);
+			@include size(8em, 37em);
+		}
+	}
+}

@@ -1,12 +1,13 @@
 ---
 title: simple-transfer
-tech:
+skills:
 - XHTML
 - CSS
 - PHP
 - InkScape
-docs_url: http://simple-transfer.rasenplanscher.info
-source_url: https://github.com/rasenplanscher/simple-transfer
+links:
+- "[source code](https://github.com/rasenplanscher/simple-transfer)"
+- "[documentation](http://simple-transfer.rasenplanscher.info)"
 ---
 
 At my first employer, we often had trouble exchanging files with our clients via email: sometimes the firewall refused the message, sometimes the attachment was deleted, sometimes the receiving client did not understand the crappy formatting of the sending client.

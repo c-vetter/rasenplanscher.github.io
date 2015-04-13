@@ -1,10 +1,11 @@
 ---
 title: angular-template-bundler
-tech:
+skills:
 - AngularJS
 - bower
-docs_url: http://angular-template-bundler.rasenplanscher.info
-source_url: https://github.com/rasenplanscher/angular-template-bundler
+links:
+- "[documentation](http://angular-template-bundler.rasenplanscher.info)"
+- "[source code](https://github.com/rasenplanscher/angular-template-bundler)"
 ---
 
 The client was in the process of building a large [AngularJS](http://angularjs.org/) app and found that their views were being loaded rather slowly. To get around that, they were thinking about eager-loading all the templates at once after the first view had been rendered.

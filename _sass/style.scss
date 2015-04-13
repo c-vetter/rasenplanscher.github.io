@@ -1,33 +1,14 @@
 @import "base";
+@import "projects";
 
 body {
 	color: tint($black, 20%);
 	font-family: $font-default;
-	margin: 3% auto 15%;
+	margin: 3% auto 8%;
 	max-width: 35em;
-}
 
-@media (max-width: 40em) {
-	body {
-		margin: 3% 5% 15%;
-	}
-}
-
-@media (min-width: 30em) {
-	header {
-		margin: 0 0 1em;
-	}
-}
-
-@media (min-width: 40em) {
-	header {
-		margin: 0 0 2em;
-	}
-}
-
-@media (min-width: 50em) {
-	header {
-		margin: 0 0 2.5em;
+	@media (max-width: 40em) {
+		margin: 3% 5% 8%;
 	}
 }
 
@@ -43,8 +24,9 @@ h6 {
 
 :link,
 :visited {
-	border: $link-border-width solid transparent;
 	border-radius: $link-border-radius;
+
+	border: $link-border-width solid transparent;
 	color: $theme-color;
 	text-decoration: none;
 	margin: $link-margin;
@@ -56,14 +38,19 @@ h6 {
 }
 
 code {
-	border: $code-border-width solid $code-border-color;
 	border-radius: $code-border-radius;
+
+	border: $code-border-width solid $code-border-color;
 	font-family: $font-code;
 	padding: 0 .4em .15em;
 }
 
 header {
 	@include clearfix;
+
+	@include viewport-width(30em, 40em) { margin: 0 0 1em; }
+	@include viewport-width(40em, 50em) { margin: 0 0 2em; }
+	@include viewport-width(50em) { margin: 0 0 2.5em; }
 }
 
 #logo {
@@ -167,33 +154,12 @@ nav {
 	}
 }
 
-.project-data {
-	@media (min-width: 35em) {
-		border: .1em solid tint($black, 80%);
-		border-radius: .75em;
-		float: right;
-		margin: 0 0 1em 1em;
-		padding: 0 1em;
-		width: 15em;
-
-		.skip-link {
-			display: none;
-		}
-	}
-
-	h2 {
-		font-size: 1.2em;
-		font-weight: bold;
-	}
-}
-
-.link-list,
-.tech-list {
+.skill-list {
 	list-style: none;
 	padding: 0;
 }
 
-.tech-list {
+.skill-list {
 	@include clearfix;
 
 	$spacing: 1em;
@@ -201,11 +167,14 @@ nav {
 	margin: (-$spacing / 2) (-$spacing / 2) (1em - ($spacing / 2));
 
 	li {
-		border: .1em solid tint($black, 80%);
 		border-radius: .25em;
+
+		border: .1em solid tint($black, 80%);
 		float: left;
 		margin: ($spacing / 2);
+		max-width: 100%;
 		padding: .1em .5em .2em;
+		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 }

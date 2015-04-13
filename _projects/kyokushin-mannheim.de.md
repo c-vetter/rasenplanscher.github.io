@@ -1,17 +1,15 @@
 ---
 title: Mas Oyama's Karate Club Mannheim
-tech:
+skills:
 - Responsive Web Design
 - HTML5
 - CSS3
 - Ruby on Rails
 - Photoshop
 - Illustrator
-demo_pages:
-- title: current version
-  url: http://kyokushin-mannheim.de.rasenplanscher.info
-- title: previous version
-  url: http://2010.kyokushin-mannheim.de.rasenplanscher.info
+links:
+- "[current version](http://kyokushin-mannheim.de.rasenplanscher.info)"
+- "[previous version](http://2010.kyokushin-mannheim.de.rasenplanscher.info)"
 ---
 
 Back in 2010 I built a little web site for a local Karate Club. It needed to be simple to use and I wanted it to be beautiful. It was supposed to inform about the dojo, present the members, show some images, and give some details about the Karate style practiced there.
