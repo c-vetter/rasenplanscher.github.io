@@ -8,7 +8,7 @@ skills:
 - Photoshop
 - Illustrator
 links:
-- "[current version](http://kyokushin-mannheim.de.rasenplanscher.info)"
+- "[live version](http://kyokushinkarate-mannheim.de)"
 - "[previous version](http://2010.kyokushin-mannheim.de.rasenplanscher.info)"
 ---
 
