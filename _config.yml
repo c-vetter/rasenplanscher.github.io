@@ -20,7 +20,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "master"
+      layout: "post"
       in_blog: true
   -
     scope:
