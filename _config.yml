@@ -1,3 +1,5 @@
+force_polling : true
+
 encoding: utf-8
 timezone: UTC
 safe: true
